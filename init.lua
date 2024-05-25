@@ -17,8 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 require("pluginconf")
-require("lualineconf")
+-- require("lualineconf")
 
 vim.cmd "let g:everforest_background = 'hard'"
 
-vim.cmd "colorscheme everforest"
+vim.cmd "colorscheme rose-pine"

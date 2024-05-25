@@ -1,12 +1,12 @@
 return {
 	"neovim/nvim-lspconfig",
-    opts = {
-        setup = {
-            rust_analyzer = function ()
-                return true
-            end
-        },
-    },
+	opts = {
+		setup = {
+			rust_analyzer = function()
+				return true
+			end,
+		},
+	},
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -18,6 +18,8 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+
+	"VonHeikemen/lsp-zero.nvim", branch = "v3.x"
 	},
 
 	config = function()
@@ -36,15 +38,12 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"pyright",
-                "ruff",
+				"ruff",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
-                    require("lspconfig").rust_analyzer.setup({
-                            capabilities = capabilities,
-                        })
 					})
 				end,
 
